@@ -25,11 +25,9 @@
 package dev.kalenchukov.sorts;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Unmodifiable;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * Класс реализации сортировщика объектов методом слияния.
@@ -56,10 +54,13 @@ public class MergeSort<T> extends AbstractSort<T>
 	 * @return {@inheritDoc}
 	 */
 	@NotNull
+	@Unmodifiable
 	@Override
 	public List<T> sort()
 	{
-		return this.sortElements(this.elements);
+		return Collections.unmodifiableList(
+			this.sortElements(this.elements)
+		);
 	}
 
 	/**
@@ -70,7 +71,7 @@ public class MergeSort<T> extends AbstractSort<T>
 	 * @throws NullPointerException если в качестве коллекции объектов передан {@code null}.
 	 */
 	@NotNull
-	private List<T> sortElements(@NotNull final  List<T> elements)
+	private List<T> sortElements(@NotNull final List<T> elements)
 	{
 		Objects.requireNonNull(elements);
 
