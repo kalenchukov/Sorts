@@ -1,9 +1,10 @@
 # Справка
 ## Sorts
-Коллекция методов сортировки.
+Коллекция алгоритмов сортировки.
 
-## Реализованные методы сортировки
-* Сортировка методом слияния
+## Реализованные алгоритмы сортировки
+* Сортировка слиянием
+* Сортировка пузырьком
 
 ## Использование
 Для сортировки элементов разных типов требуется использовать компараторы.
@@ -46,7 +47,7 @@ public class StringComparator implements Comparator<String>
 ```
 
 ### Сортировка
-#### Сортировка методом слияния
+#### Сортировка слиянием
 ```java
 import java.lang.Integer;
 import java.util.List;
@@ -64,4 +65,24 @@ List<Integer> sortedElements = sorting.sort();
 Результат выполнения:
 ```
 -100, -5, 0, 0, 1, 3, 4, 5, 6, 7, 8, 9, 20, 69, 77, 78
+```
+
+#### Сортировка пузырьком
+```java
+import java.lang.Integer;
+import java.util.List;
+import dev.kalenchukov.sorts.Sorting;
+import dev.kalenchukov.sorts.BubbleSort;
+
+List<Integer> elements = List.of(
+	90, 7, 0, 8, 0, 6, -1
+);
+
+Sorting<Integer> sorting = new BubbleSort<>(elements, new IntegerComparator());
+List<Integer> sortedElements = sorting.sort();
+```
+
+Результат выполнения:
+```
+-1, 0, 0, 6, 7, 8, 90
 ```

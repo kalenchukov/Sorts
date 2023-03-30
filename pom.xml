@@ -33,7 +33,7 @@
 	<version>1.0.0</version>
 
 	<name>Sorts</name>
-	<description>Коллекция методов сортировки</description>
+	<description>Коллекция алгоритмов сортировки</description>
 	<url>https://github.com/kalenchukov/Sorts</url>
 
 	<licenses>
