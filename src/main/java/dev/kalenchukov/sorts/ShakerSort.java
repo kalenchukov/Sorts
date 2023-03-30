@@ -29,20 +29,20 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 /**
- * Класс реализации сортировщика объектов с помощью алгоритма сортировки пузырьком.
+ * Класс реализации сортировщика объектов с помощью алгоритма шейкерной сортировки.
  *
  * @param <T> тип сортируемых объектов.
  */
-public class BubbleSort<T> extends AbstractSort<T>
+public class ShakerSort<T> extends AbstractSort<T>
 {
 	/**
-	 * Конструктор для {@code BubbleSort}.
+	 * Конструктор для {@code ShakerSort}.
 	 *
 	 * @param elements коллекция сортируемых объектов.
 	 * @param comparator компаратор.
 	 * @throws NullPointerException если в качестве коллекции объектов или компаратора передан {@code null}.
 	 */
-	public BubbleSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
+	public ShakerSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
 	{
 		super(elements, comparator);
 	}
@@ -66,9 +66,9 @@ public class BubbleSort<T> extends AbstractSort<T>
 
 		List<T> sortedElements = new ArrayList<>(elements);
 
-		for (int i = 0; i < (elements.size() - 1); i++)
+		for (int i = 0; i < (elements.size() / 2); i++)
 		{
-			for (int current = 0; current < ((elements.size() - 1) - i); current++)
+			for (int current = i; current < ((elements.size() - 1) - i); current++)
 			{
 				final int comparisonResult = this.getComparator().compare(
 					sortedElements.get(current),
@@ -77,6 +77,18 @@ public class BubbleSort<T> extends AbstractSort<T>
 
 				if (comparisonResult > 0) {
 					Collections.swap(sortedElements, current, current + 1);
+				}
+			}
+
+			for (int current = ((elements.size() - 1) - i); current > i; current--)
+			{
+				final int comparisonResult = this.getComparator().compare(
+					sortedElements.get(current),
+					sortedElements.get(current - 1)
+				);
+
+				if (comparisonResult < 0) {
+					Collections.swap(sortedElements, current, current - 1);
 				}
 			}
 		}

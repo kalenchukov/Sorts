@@ -5,6 +5,7 @@
 ## Реализованные алгоритмы сортировки
 * Сортировка слиянием
 * Сортировка пузырьком
+* Шейкерная сортировка
 
 ## Использование
 Для сортировки элементов разных типов требуется использовать компараторы.
@@ -85,4 +86,24 @@ List<Integer> sortedElements = sorting.sort();
 Результат выполнения:
 ```
 -1, 0, 0, 6, 7, 8, 90
+```
+
+#### Шейкерная сортировка
+```java
+import java.lang.Integer;
+import java.util.List;
+import dev.kalenchukov.sorts.Sorting;
+import dev.kalenchukov.sorts.ShakerSort;
+
+List<Integer> elements = List.of(
+	110, 5, 1, 97, 0, 7, 5, -0, 4, -4, -9
+);
+
+Sorting<Integer> sorting = new ShakerSort<>(elements, new IntegerComparator());
+List<Integer> sortedElements = sorting.sort();
+```
+
+Результат выполнения:
+```
+-9, -4, 0, 0, 1, 4, 5, 5, 7, 97, 110
 ```
