@@ -25,7 +25,6 @@
 package dev.kalenchukov.sorts;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Unmodifiable;
 
 import java.util.*;
 
@@ -51,27 +50,12 @@ public class MergeSort<T> extends AbstractSort<T>
 	/**
 	 * {@inheritDoc}
 	 *
+	 * @param elements {@inheritDoc}
 	 * @return {@inheritDoc}
-	 */
-	@NotNull
-	@Unmodifiable
-	@Override
-	public List<T> sort()
-	{
-		return Collections.unmodifiableList(
-			this.sortElements(this.elements)
-		);
-	}
-
-	/**
-	 * Сортирует объекты коллекции в порядке возрастания.
-	 *
-	 * @param elements коллекция объектов для сортировки.
-	 * @return коллекцию с отсортированными объектами.
 	 * @throws NullPointerException если в качестве коллекции объектов передан {@code null}.
 	 */
 	@NotNull
-	private List<T> sortElements(@NotNull final List<T> elements)
+	protected List<T> sortElements(@NotNull final List<T> elements)
 	{
 		Objects.requireNonNull(elements);
 
@@ -110,7 +94,7 @@ public class MergeSort<T> extends AbstractSort<T>
 
 		while (leftPart.size() != indexLeft && rightPart.size() != indexRight)
 		{
-			final int comparisonResult = this.comparator.compare(
+			final int comparisonResult = this.getComparator().compare(
 				leftPart.get(indexLeft),
 				rightPart.get(indexRight)
 			);

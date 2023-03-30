@@ -25,7 +25,10 @@
 package dev.kalenchukov.sorts;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.annotations.Unmodifiable;
 
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
@@ -41,13 +44,25 @@ public abstract class AbstractSort<T> implements Sorting<T>
 	 * Коллекция сортируемых объектов.
 	 */
 	@NotNull
-	protected final List<T> elements;
+	private final List<T> elements;
 
 	/**
 	 * Компаратор.
 	 */
 	@NotNull
-	protected final Comparator<T> comparator;
+	private final Comparator<T> comparator;
+
+	/**
+	 * Время начала сортировки в миллисекундах.
+	 */
+	@Nullable
+	private Long timeStart;
+
+	/**
+	 * Время окончания сортировки в миллисекундах.
+	 */
+	@Nullable
+	private Long timeEnd;
 
 	/**
 	 * Конструктор для {@code AbstractSort}.
@@ -63,5 +78,96 @@ public abstract class AbstractSort<T> implements Sorting<T>
 
 		this.elements = elements;
 		this.comparator = comparator;
+		this.timeStart = null;
+		this.timeEnd = null;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return {@inheritDoc}
+	 */
+	@NotNull
+	@Unmodifiable
+	@Override
+	public final List<T> sort()
+	{
+		this.setTimeStart();
+		List<T> sortedElements = this.sortElements(this.elements);
+		this.setTimeEnd();
+
+		return Collections.unmodifiableList(sortedElements);
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return {@inheritDoc}
+	 */
+	@Nullable
+	public Long getTimeStart()
+	{
+		return this.timeStart;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return {@inheritDoc}
+	 */
+	@Nullable
+	public Long getTimeEnd()
+	{
+		return this.timeEnd;
+	}
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * @return {@inheritDoc}
+	 */
+	@Nullable
+	public Long getTimeSpent()
+	{
+		if (this.getTimeEnd() != null && this.getTimeStart() != null) {
+			return (this.getTimeEnd() - this.getTimeStart());
+		}
+
+		return null;
+	}
+	/**
+	 * Сортирует объекты коллекции в порядке возрастания.
+	 *
+	 * @param elements коллекция объектов для сортировки.
+	 * @return коллекцию с отсортированными объектами.
+	 */
+	@NotNull
+	protected abstract List<T> sortElements(@NotNull final List<T> elements);
+
+	/**
+	 * Возвращает компаратор.
+	 *
+	 * @return компаратор.
+	 */
+	@NotNull
+	protected final Comparator<T> getComparator()
+	{
+		return this.comparator;
+	}
+
+	/**
+	 * Устанавливает время начала сортировки.
+	 */
+	private void setTimeStart()
+	{
+		this.timeStart = System.currentTimeMillis();
+	}
+
+	/**
+	 * Устанавливает время окончания сортировки.
+	 */
+	private void setTimeEnd()
+	{
+		this.timeEnd = System.currentTimeMillis();
 	}
 }
