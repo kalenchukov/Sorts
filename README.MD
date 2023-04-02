@@ -6,6 +6,7 @@
 * Сортировка слиянием
 * Сортировка пузырьком
 * Шейкерная сортировка
+* Сортировка расчёской
 
 ## Использование
 Для сортировки элементов разных типов требуется использовать компараторы.
@@ -106,4 +107,24 @@ List<Integer> sortedElements = sorting.sort();
 Результат выполнения:
 ```
 -9, -4, 0, 0, 1, 4, 5, 5, 7, 97, 110
+```
+
+#### Сортировка расчёской
+```java
+import java.lang.Integer;
+import java.util.List;
+import dev.kalenchukov.sorts.Sorting;
+import dev.kalenchukov.sorts.CombSort;
+
+List<Integer> elements = List.of(
+	11, 4, 8, -12, 6, 3, 9, -5, 1, 2, 13, 7, 10
+);
+
+Sorting<Integer> sorting = new CombSort<>(elements, new IntegerComparator());
+List<Integer> sortedElements = sorting.sort();
+```
+
+Результат выполнения:
+```
+-12, -5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13
 ```

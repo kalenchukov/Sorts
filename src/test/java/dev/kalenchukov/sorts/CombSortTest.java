@@ -33,27 +33,27 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * Класс проверки методов класса {@link ShakerSort}.
+ * Класс проверки методов класса {@link CombSort}.
  */
-class ShakerSortTest
+class CombSortTest
 {
 	/**
-	 * Проверка метода {@link ShakerSort#sort()}.
+	 * Проверка метода {@link CombSort#sort()}.
 	 */
 	@Test
 	public void testSort()
 	{
-		List<Integer> elements = List.of(110, 5, 1, 97, 0, 7, 5, -0, 4, -4, -9);
-		List<Integer> expected = List.of(-9, -4, 0, 0, 1, 4, 5, 5, 7, 97, 110);
+		List<Integer> elements = List.of(11, 4, 8, -12, 6, 3, 9, -5, 1, 2, 13, 7, 10);
+		List<Integer> expected = List.of(-12, -5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13);
 
-		Sorting<Integer> sorting = new ShakerSort<>(elements, new IntegerComparator());
+		Sorting<Integer> sorting = new CombSort<>(elements, new IntegerComparator());
 		List<Integer> sortedElements = sorting.sort();
 
 		assertArrayEquals(expected.toArray(), sortedElements.toArray());
 	}
 
 	/**
-	 * Проверка метода {@link ShakerSort#sort()} без элементов.
+	 * Проверка метода {@link CombSort#sort()} без элементов.
 	 */
 	@Test
 	public void testSortNotElement()
@@ -61,37 +61,37 @@ class ShakerSortTest
 		List<Integer> elements = Collections.emptyList();
 		List<Integer> expected = Collections.emptyList();
 
-		Sorting<Integer> sorting = new ShakerSort<>(elements, new IntegerComparator());
+		Sorting<Integer> sorting = new CombSort<>(elements, new IntegerComparator());
 		List<Integer> sortedElements = sorting.sort();
 
 		assertArrayEquals(expected.toArray(), sortedElements.toArray());
 	}
 
 	/**
-	 * Проверка метода {@link ShakerSort#sort()} с одним элементом.
+	 * Проверка метода {@link CombSort#sort()} с одним элементом.
 	 */
 	@Test
 	public void testSortOneElement()
 	{
-		List<Integer> elements = List.of(78);
-		List<Integer> expected = List.of(78);
+		List<Integer> elements = List.of(89);
+		List<Integer> expected = List.of(89);
 
-		Sorting<Integer> sorting = new ShakerSort<>(elements, new IntegerComparator());
+		Sorting<Integer> sorting = new CombSort<>(elements, new IntegerComparator());
 		List<Integer> sortedElements = sorting.sort();
 
 		assertArrayEquals(expected.toArray(), sortedElements.toArray());
 	}
 
 	/**
-	 * Проверка метода {@link ShakerSort#sort()} с двумя элементами.
+	 * Проверка метода {@link CombSort#sort()} с двумя элементами.
 	 */
 	@Test
 	public void testSortTwoElement()
 	{
-		List<Integer> elements = List.of(40, 31);
-		List<Integer> expected = List.of(31, 40);
+		List<Integer> elements = List.of(89, 71);
+		List<Integer> expected = List.of(71, 89);
 
-		Sorting<Integer> sorting = new ShakerSort<>(elements, new IntegerComparator());
+		Sorting<Integer> sorting = new CombSort<>(elements, new IntegerComparator());
 		List<Integer> sortedElements = sorting.sort();
 
 		assertArrayEquals(expected.toArray(), sortedElements.toArray());

@@ -27,6 +27,7 @@ package dev.kalenchukov.sorts;
 import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -48,7 +49,7 @@ class BubbleSortTest
 
 		Sorting<Integer> sorting = new BubbleSort<>(elements, new IntegerComparator());
 		List<Integer> sortedElements = sorting.sort();
-		System.out.println(sortedElements);
+
 		assertArrayEquals(expected.toArray(), sortedElements.toArray());
 	}
 
