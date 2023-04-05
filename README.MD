@@ -7,6 +7,7 @@
 * Сортировка пузырьком
 * Шейкерная сортировка
 * Сортировка расчёской
+* Сортировка вставками
 
 ## Использование
 Для сортировки элементов разных типов требуется использовать компараторы.
@@ -127,4 +128,24 @@ List<Integer> sortedElements = sorting.sort();
 Результат выполнения:
 ```
 -12, -5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13
+```
+
+#### Сортировка вставками
+```java
+import java.lang.Integer;
+import java.util.List;
+import dev.kalenchukov.sorts.Sorting;
+import dev.kalenchukov.sorts.InsertionSort;
+
+List<Integer> elements = List.of(
+	999, 0, -9, 94, -12, 47, 300, 86, 86, -1000
+);
+
+Sorting<Integer> sorting = new InsertionSort<>(elements, new IntegerComparator());
+List<Integer> sortedElements = sorting.sort();
+```
+
+Результат выполнения:
+```
+-1000, -12, -9, 0, 47, 86, 86, 94, 300, 999
 ```
