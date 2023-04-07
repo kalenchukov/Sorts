@@ -27,6 +27,7 @@ package dev.kalenchukov.sorts;
 import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Test;
 
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -44,6 +45,21 @@ public class MergeSortTest
 	{
 		List<Integer> elements = List.of(78, 6, 9, 8, 1, 7, -5, 3, 4, 5, 0, 20, 77, -0, 69, -100);
 		List<Integer> expected = List.of(-100, -5, 0, 0, 1, 3, 4, 5, 6, 7, 8, 9, 20, 69, 77, 78);
+
+		Sorting<Integer> sorting = new MergeSort<>(elements, new IntegerComparator());
+		List<Integer> sortedElements = sorting.sort();
+
+		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+	}
+
+	/**
+	 * Проверка метода {@link MergeSort#sort()} без элементов.
+	 */
+	@Test
+	public void testSortNotElement()
+	{
+		List<Integer> elements = Collections.emptyList();
+		List<Integer> expected = Collections.emptyList();
 
 		Sorting<Integer> sorting = new MergeSort<>(elements, new IntegerComparator());
 		List<Integer> sortedElements = sorting.sort();
