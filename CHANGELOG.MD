@@ -5,6 +5,7 @@
 * Добавлен алгоритм сортировки выбором.
 * Добавлен метод MergeSortTest.testSortNotElement().
 * Добавлен package-info.java.
+* Добавлен module-info.java.
 
 ## v1.1.0 - 03.04.2023
 ### Добавлено
