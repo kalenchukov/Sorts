@@ -136,7 +136,7 @@ public abstract class AbstractSort<T> implements Sorting<T>
 		return null;
 	}
 	/**
-	 * Сортирует объекты коллекции в порядке возрастания.
+	 * Сортирует объекты коллекции.
 	 *
 	 * @param elements коллекция объектов для сортировки.
 	 * @return коллекцию с отсортированными объектами.

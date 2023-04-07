@@ -8,6 +8,7 @@
 * Шейкерная сортировка
 * Сортировка расчёской
 * Сортировка вставками
+* Сортировка выбором
 
 ## Использование
 Для сортировки элементов разных типов требуется использовать компараторы.
@@ -148,4 +149,24 @@ List<Integer> sortedElements = sorting.sort();
 Результат выполнения:
 ```
 -1000, -12, -9, 0, 47, 86, 86, 94, 300, 999
+```
+
+#### Сортировка выбором
+```java
+import java.lang.Integer;
+import java.util.List;
+import dev.kalenchukov.sorts.Sorting;
+import dev.kalenchukov.sorts.SelectionSort;
+
+List<Integer> elements = List.of(
+	889, 7, 1, 6, 1, -7, 56, 47, 0, -700
+);
+
+Sorting<Integer> sorting = new SelectionSort<>(elements, new IntegerComparator());
+List<Integer> sortedElements = sorting.sort();
+```
+
+Результат выполнения:
+```
+-700, -7, 0, 1, 1, 6, 7, 47, 56, 889
 ```

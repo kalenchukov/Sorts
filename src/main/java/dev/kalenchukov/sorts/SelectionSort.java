@@ -25,24 +25,25 @@
 package dev.kalenchukov.sorts;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Range;
 
 import java.util.*;
 
 /**
- * Класс реализации сортировщика объектов с помощью алгоритма сортировки слиянием.
+ * Класс реализации сортировщика объектов с помощью алгоритма сортировки выбором.
  *
  * @param <T> тип сортируемых объектов.
  */
-public class MergeSort<T> extends AbstractSort<T>
+public class SelectionSort<T> extends AbstractSort<T>
 {
 	/**
-	 * Конструктор для {@code MergeSort}.
+	 * Конструктор для {@code SelectionSort}.
 	 *
 	 * @param elements коллекция сортируемых объектов.
 	 * @param comparator компаратор.
 	 * @throws NullPointerException если в качестве коллекции объектов или компаратора передан {@code null}.
 	 */
-	public MergeSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
+	public SelectionSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
 	{
 		super(elements, comparator);
 	}
@@ -64,63 +65,57 @@ public class MergeSort<T> extends AbstractSort<T>
 			return elements;
 		}
 
-		final int middle = elements.size() / 2;
+		List<T> sortedElements = new ArrayList<>(elements);
 
-		List<T> leftPart = new ArrayList<>(elements.subList(0, middle));
-		List<T> rightPart = new ArrayList<>(elements.subList(middle, elements.size()));
-
-		leftPart = this.sortElements(leftPart);
-		rightPart = this.sortElements(rightPart);
-
-		return this.mergeParts(leftPart, rightPart);
-	}
-
-	/**
-	 * Объединяет коллекции с отсортированными объектами.
-	 *
-	 * @param leftPart первая коллекция объектов.
-	 * @param rightPart вторая коллекция объектов.
-	 * @return коллекцию с отсортированными объектами.
-	 * @throws NullPointerException если в качестве первой или второй коллекции объектов передан {@code null}.
-	 */
-	@NotNull
-	private List<T> mergeParts(@NotNull final List<T> leftPart, @NotNull final List<T> rightPart)
-	{
-		Objects.requireNonNull(leftPart);
-		Objects.requireNonNull(rightPart);
-
-		final List<T> sortedElements = new ArrayList<>();
-		int indexLeft = 0;
-		int indexRight = 0;
-
-		while (leftPart.size() != indexLeft && rightPart.size() != indexRight)
+		for (int index = 0; index < sortedElements.size(); index++)
 		{
-			final int comparisonResult = this.getComparator().compare(
-				leftPart.get(indexLeft),
-				rightPart.get(indexRight)
-			);
+			final int indexMinElement = this.getIndexMinElement(sortedElements, index);
 
-			if (comparisonResult < 0) {
-				sortedElements.add(leftPart.get(indexLeft));
-				indexLeft++;
-			} else {
-				sortedElements.add(rightPart.get(indexRight));
-				indexRight++;
+			if (indexMinElement != index) {
+				Collections.swap(sortedElements, index, indexMinElement);
 			}
 		}
 
-		while (leftPart.size() != indexLeft)
-		{
-			sortedElements.add(leftPart.get(indexLeft));
-			indexLeft++;
-		}
-
-		while (rightPart.size() != indexRight)
-		{
-			sortedElements.add(rightPart.get(indexRight));
-			indexRight++;
-		}
-
 		return sortedElements;
+	}
+
+	/**
+	 * Возвращает индекс минимального элемента.
+	 *
+	 * @param elements коллекция элементов.
+	 * @param indexFrom минимальный индекс элемента с которого начинается поиск.
+	 * @return возвращает индекс минимального элемента.
+	 * @throws IllegalArgumentException если в коллекции нет элементов.
+	 * @throws IllegalArgumentException если индекс элемента с которого начинается поиск, меньше нуля или превышает количество элементов.
+	 */
+	@NotNull
+	private Integer getIndexMinElement(@NotNull final List<T> elements,
+									   @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer indexFrom)
+	{
+		Objects.requireNonNull(elements);
+
+		if (elements.isEmpty()) {
+			throw new IllegalArgumentException();
+		}
+
+		if (indexFrom < 0 || indexFrom > elements.size()) {
+			throw new IllegalArgumentException();
+		}
+
+		int indexMinElement = indexFrom;
+
+		for (int index = indexFrom; index < elements.size(); index++)
+		{
+			final int comparisonResult = this.getComparator().compare(
+				elements.get(index),
+				elements.get(indexMinElement)
+			);
+
+			if (comparisonResult < 0) {
+				indexMinElement = index;
+			}
+		}
+
+		return indexMinElement;
 	}
 }
