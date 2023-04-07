@@ -3,5 +3,7 @@
  */
 module dev.kalenchukov.sorts
 {
+	requires org.jetbrains.annotations;
+
 	exports dev.kalenchukov.sorts;
 }
