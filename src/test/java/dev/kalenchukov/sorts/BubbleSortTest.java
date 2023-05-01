@@ -38,7 +38,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Aleksey Kalenchukov
  */
-class BubbleSortTest
+public class BubbleSortTest
 {
 	/**
 	 * Проверка метода {@link BubbleSort#sort()}.

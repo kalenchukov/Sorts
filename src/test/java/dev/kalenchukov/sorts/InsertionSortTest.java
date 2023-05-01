@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Aleksey Kalenchukov
  */
-class InsertionSortTest
+public class InsertionSortTest
 {
 	/**
 	 * Проверка метода {@link InsertionSort#sort()}.

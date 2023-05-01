@@ -36,7 +36,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Aleksey Kalenchukov
  */
-class AbstractSortTest
+public class AbstractSortTest
 {
 	private final List<Integer> elements = List.of(
 		78, 6, 9, 8, 1, 7, -5, 3, 4, 5, 0, 20, 77, -0, 69, -100

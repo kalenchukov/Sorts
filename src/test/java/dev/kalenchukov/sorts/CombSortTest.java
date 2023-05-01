@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Aleksey Kalenchukov
  */
-class CombSortTest
+public class CombSortTest
 {
 	/**
 	 * Проверка метода {@link CombSort#sort()}.

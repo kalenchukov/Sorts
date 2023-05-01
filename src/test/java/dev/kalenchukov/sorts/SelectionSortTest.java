@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Aleksey Kalenchukov
  */
-class SelectionSortTest
+public class SelectionSortTest
 {
 	/**
 	 * Проверка метода {@link SelectionSort#sort()}.

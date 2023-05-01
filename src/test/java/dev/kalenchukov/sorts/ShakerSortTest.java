@@ -37,7 +37,7 @@ import static org.junit.jupiter.api.Assertions.*;
  *
  * @author Aleksey Kalenchukov
  */
-class ShakerSortTest
+public class ShakerSortTest
 {
 	/**
 	 * Проверка метода {@link ShakerSort#sort()}.
