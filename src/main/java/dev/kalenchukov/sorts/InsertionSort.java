@@ -32,7 +32,6 @@ import java.util.*;
  * Класс реализации сортировщика объектов с помощью алгоритма сортировки вставками.
  *
  * @param <T> тип сортируемых объектов.
- *
  * @author Aleksey Kalenchukov
  */
 public class InsertionSort<T> extends AbstractSort<T>
