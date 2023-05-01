@@ -31,6 +31,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Класс проверки методов класса {@link AbstractSort}.
+ *
+ * @author Aleksey Kalenchukov
+ */
 class AbstractSortTest
 {
 	private final List<Integer> elements = List.of(
