@@ -29,7 +29,7 @@ import java.util.Comparator;
 /**
  * Класс компаратора для объектов типа {@code Integer}.
  *
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public class IntegerComparator implements Comparator<Integer>
 {

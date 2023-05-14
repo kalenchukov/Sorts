@@ -32,7 +32,7 @@ import java.util.*;
  * Класс реализации сортировщика объектов с помощью алгоритма шейкерной сортировки.
  *
  * @param <T> тип сортируемых объектов.
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public class ShakerSort<T> extends AbstractSort<T>
 {

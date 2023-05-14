@@ -32,7 +32,7 @@ import java.util.*;
  * Класс реализации сортировщика объектов с помощью алгоритма сортировки слиянием.
  *
  * @param <T> тип сортируемых объектов.
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public class MergeSort<T> extends AbstractSort<T>
 {

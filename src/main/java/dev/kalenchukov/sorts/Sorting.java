@@ -30,7 +30,7 @@ import java.util.List;
  * Интерфейс для реализации сортировщика объектов.
  *
  * @param <T> тип сортируемых объектов.
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public interface Sorting<T>
 {

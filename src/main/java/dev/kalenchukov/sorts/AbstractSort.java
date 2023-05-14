@@ -37,7 +37,7 @@ import java.util.Objects;
  * Класс абстрактной реализации сортировщика объектов.
  *
  * @param <T> тип сортируемых объектов.
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public abstract class AbstractSort<T> implements Sorting<T>
 {

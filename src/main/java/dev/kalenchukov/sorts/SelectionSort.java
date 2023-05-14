@@ -33,7 +33,7 @@ import java.util.*;
  * Класс реализации сортировщика объектов с помощью алгоритма сортировки выбором.
  *
  * @param <T> тип сортируемых объектов.
- * @author Aleksey Kalenchukov
+ * @author Алексей Каленчуков
  */
 public class SelectionSort<T> extends AbstractSort<T>
 {
