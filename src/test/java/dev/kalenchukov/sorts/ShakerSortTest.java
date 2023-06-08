@@ -43,7 +43,7 @@ public class ShakerSortTest
 	 * Проверка метода {@link ShakerSort#sort()}.
 	 */
 	@Test
-	public void testSort()
+	public void sort()
 	{
 		List<Integer> elements = List.of(110, 5, 1, 97, 0, 7, 5, -0, 4, -4, -9);
 		List<Integer> expected = List.of(-9, -4, 0, 0, 1, 4, 5, 5, 7, 97, 110);
@@ -58,7 +58,7 @@ public class ShakerSortTest
 	 * Проверка метода {@link ShakerSort#sort()} без элементов.
 	 */
 	@Test
-	public void testSortNotElement()
+	public void sortNotElement()
 	{
 		List<Integer> elements = Collections.emptyList();
 		List<Integer> expected = Collections.emptyList();
@@ -73,7 +73,7 @@ public class ShakerSortTest
 	 * Проверка метода {@link ShakerSort#sort()} с одним элементом.
 	 */
 	@Test
-	public void testSortOneElement()
+	public void sortOneElement()
 	{
 		List<Integer> elements = List.of(78);
 		List<Integer> expected = List.of(78);
@@ -88,7 +88,7 @@ public class ShakerSortTest
 	 * Проверка метода {@link ShakerSort#sort()} с двумя элементами.
 	 */
 	@Test
-	public void testSortTwoElement()
+	public void sortTwoElement()
 	{
 		List<Integer> elements = List.of(40, 31);
 		List<Integer> expected = List.of(31, 40);

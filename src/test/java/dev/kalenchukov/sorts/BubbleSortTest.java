@@ -44,7 +44,7 @@ public class BubbleSortTest
 	 * Проверка метода {@link BubbleSort#sort()}.
 	 */
 	@Test
-	public void testSort()
+	public void sort()
 	{
 		List<Integer> elements = List.of(90, 7, 0, 8, 0, 6, -1);
 		List<Integer> expected = List.of(-1, 0, 0, 6, 7, 8, 90);
@@ -59,7 +59,7 @@ public class BubbleSortTest
 	 * Проверка метода {@link BubbleSort#sort()} без элементов.
 	 */
 	@Test
-	public void testSortNotElement()
+	public void sortNotElement()
 	{
 		List<Integer> elements = Collections.emptyList();
 		List<Integer> expected = Collections.emptyList();
@@ -74,7 +74,7 @@ public class BubbleSortTest
 	 * Проверка метода {@link BubbleSort#sort()} с одним элементом.
 	 */
 	@Test
-	public void testSortOneElement()
+	public void sortOneElement()
 	{
 		List<Integer> elements = List.of(89);
 		List<Integer> expected = List.of(89);
@@ -89,7 +89,7 @@ public class BubbleSortTest
 	 * Проверка метода {@link BubbleSort#sort()} с двумя элементами.
 	 */
 	@Test
-	public void testSortTwoElement()
+	public void sortTwoElement()
 	{
 		List<Integer> elements = List.of(89, 71);
 		List<Integer> expected = List.of(71, 89);

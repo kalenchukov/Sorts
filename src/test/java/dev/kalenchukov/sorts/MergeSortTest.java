@@ -43,7 +43,7 @@ public class MergeSortTest
 	 * Проверка метода {@link MergeSort#sort()}.
 	 */
 	@Test
-	public void testSort()
+	public void sort()
 	{
 		List<Integer> elements = List.of(78, 6, 9, 8, 1, 7, -5, 3, 4, 5, 0, 20, 77, -0, 69, -100);
 		List<Integer> expected = List.of(-100, -5, 0, 0, 1, 3, 4, 5, 6, 7, 8, 9, 20, 69, 77, 78);
@@ -58,7 +58,7 @@ public class MergeSortTest
 	 * Проверка метода {@link MergeSort#sort()} без элементов.
 	 */
 	@Test
-	public void testSortNotElement()
+	public void sortNotElement()
 	{
 		List<Integer> elements = Collections.emptyList();
 		List<Integer> expected = Collections.emptyList();
@@ -73,7 +73,7 @@ public class MergeSortTest
 	 * Проверка метода {@link MergeSort#sort()} с одним элементом.
 	 */
 	@Test
-	public void testSortOneElement()
+	public void sortOneElement()
 	{
 		List<Integer> elements = List.of(89);
 		List<Integer> expected = List.of(89);
@@ -88,7 +88,7 @@ public class MergeSortTest
 	 * Проверка метода {@link MergeSort#sort()} с двумя элементами.
 	 */
 	@Test
-	public void testSortTwoElement()
+	public void sortTwoElement()
 	{
 		List<Integer> elements = List.of(89, 71);
 		List<Integer> expected = List.of(71, 89);

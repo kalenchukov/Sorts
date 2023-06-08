@@ -46,7 +46,7 @@ public class AbstractSortTest
 	 * Проверка метода {@link AbstractSort#getTimeStart()}.
 	 */
 	@Test
-	public void testGetTimeStart()
+	public void getTimeStart()
 	{
 		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
 		sorting.sort();
@@ -59,7 +59,7 @@ public class AbstractSortTest
 	 * Проверка метода {@link AbstractSort#getTimeStart()} без начала сортировки.
 	 */
 	@Test
-	public void testGetTimeStartNull()
+	public void getTimeStartNull()
 	{
 		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
 		Long time = sorting.getTimeStart();
@@ -71,7 +71,7 @@ public class AbstractSortTest
 	 * Проверка метода {@link AbstractSort#getTimeEnd()}.
 	 */
 	@Test
-	public void testGetTimeEnd()
+	public void getTimeEnd()
 	{
 		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
 		sorting.sort();
@@ -84,7 +84,7 @@ public class AbstractSortTest
 	 * Проверка метода {@link AbstractSort#getTimeEnd()} без начала сортировки.
 	 */
 	@Test
-	public void testGetTimeEndNull()
+	public void getTimeEndNull()
 	{
 		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
 		Long time = sorting.getTimeEnd();
@@ -96,7 +96,7 @@ public class AbstractSortTest
 	 * Проверка метода {@link AbstractSort#getTimeSpent()}.
 	 */
 	@Test
-	public void testGetTimeSpent()
+	public void getTimeSpent()
 	{
 		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
 		sorting.sort();
@@ -109,7 +109,7 @@ public class AbstractSortTest
 	 * Проверка метода {@link AbstractSort#getTimeStart()} без начала сортировки.
 	 */
 	@Test
-	public void testGetTimeSpentNull()
+	public void getTimeSpentNull()
 	{
 		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
 		Long time = sorting.getTimeSpent();

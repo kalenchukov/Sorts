@@ -43,7 +43,7 @@ public class SelectionSortTest
 	 * Проверка метода {@link SelectionSort#sort()}.
 	 */
 	@Test
-	public void testSort()
+	public void sort()
 	{
 		List<Integer> elements = List.of(889, 7, 1, 6, 1, -7, 56, 47, 0, -700);
 		List<Integer> expected = List.of(-700, -7, 0, 1, 1, 6, 7, 47, 56, 889);
@@ -58,7 +58,7 @@ public class SelectionSortTest
 	 * Проверка метода {@link SelectionSort#sort()} без элементов.
 	 */
 	@Test
-	public void testSortNotElement()
+	public void sortNotElement()
 	{
 		List<Integer> elements = Collections.emptyList();
 		List<Integer> expected = Collections.emptyList();
@@ -73,7 +73,7 @@ public class SelectionSortTest
 	 * Проверка метода {@link SelectionSort#sort()} с одним элементом.
 	 */
 	@Test
-	public void testSortOneElement()
+	public void sortOneElement()
 	{
 		List<Integer> elements = List.of(85);
 		List<Integer> expected = List.of(85);
@@ -88,7 +88,7 @@ public class SelectionSortTest
 	 * Проверка метода {@link SelectionSort#sort()} с двумя элементами.
 	 */
 	@Test
-	public void testSortTwoElement()
+	public void sortTwoElement()
 	{
 		List<Integer> elements = List.of(85, 10);
 		List<Integer> expected = List.of(10, 85);

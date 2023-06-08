@@ -43,7 +43,7 @@ public class InsertionSortTest
 	 * Проверка метода {@link InsertionSort#sort()}.
 	 */
 	@Test
-	public void testSort()
+	public void sort()
 	{
 		List<Integer> elements = List.of(999, 0, -9, 94, -12, 47, 300, 86, 86, -1000);
 		List<Integer> expected = List.of(-1000, -12, -9, 0, 47, 86, 86, 94, 300, 999);
@@ -58,7 +58,7 @@ public class InsertionSortTest
 	 * Проверка метода {@link InsertionSort#sort()} без элементов.
 	 */
 	@Test
-	public void testSortNotElement()
+	public void sortNotElement()
 	{
 		List<Integer> elements = Collections.emptyList();
 		List<Integer> expected = Collections.emptyList();
@@ -73,7 +73,7 @@ public class InsertionSortTest
 	 * Проверка метода {@link InsertionSort#sort()} с одним элементом.
 	 */
 	@Test
-	public void testSortOneElement()
+	public void sortOneElement()
 	{
 		List<Integer> elements = List.of(52);
 		List<Integer> expected = List.of(52);
@@ -88,7 +88,7 @@ public class InsertionSortTest
 	 * Проверка метода {@link InsertionSort#sort()} с двумя элементами.
 	 */
 	@Test
-	public void testSortTwoElement()
+	public void sortTwoElement()
 	{
 		List<Integer> elements = List.of(52, 40);
 		List<Integer> expected = List.of(40, 52);
