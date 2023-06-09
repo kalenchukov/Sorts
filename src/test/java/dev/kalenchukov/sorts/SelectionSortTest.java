@@ -45,13 +45,13 @@ public class SelectionSortTest
 	@Test
 	public void sort()
 	{
-		List<Integer> elements = List.of(889, 7, 1, 6, 1, -7, 56, 47, 0, -700);
+		List<Integer> value = List.of(889, 7, 1, 6, 1, -7, 56, 47, 0, -700);
 		List<Integer> expected = List.of(-700, -7, 0, 1, 1, 6, 7, 47, 56, 889);
 
-		Sorting<Integer> sorting = new SelectionSort<>(elements, new IntegerComparator());
-		List<Integer> sortedElements = sorting.sort();
+		Sorting<Integer> sorting = new SelectionSort<>(value, new IntegerComparator());
+		List<Integer> actual = sorting.sort();
 
-		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 
 	/**
@@ -60,13 +60,13 @@ public class SelectionSortTest
 	@Test
 	public void sortNotElement()
 	{
-		List<Integer> elements = Collections.emptyList();
+		List<Integer> value = Collections.emptyList();
 		List<Integer> expected = Collections.emptyList();
 
-		Sorting<Integer> sorting = new SelectionSort<>(elements, new IntegerComparator());
-		List<Integer> sortedElements = sorting.sort();
+		Sorting<Integer> sorting = new SelectionSort<>(value, new IntegerComparator());
+		List<Integer> actual = sorting.sort();
 
-		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 
 	/**
@@ -75,13 +75,13 @@ public class SelectionSortTest
 	@Test
 	public void sortOneElement()
 	{
-		List<Integer> elements = List.of(85);
+		List<Integer> value = List.of(85);
 		List<Integer> expected = List.of(85);
 
-		Sorting<Integer> sorting = new SelectionSort<>(elements, new IntegerComparator());
-		List<Integer> sortedElements = sorting.sort();
+		Sorting<Integer> sorting = new SelectionSort<>(value, new IntegerComparator());
+		List<Integer> actual = sorting.sort();
 
-		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 
 	/**
@@ -90,12 +90,12 @@ public class SelectionSortTest
 	@Test
 	public void sortTwoElement()
 	{
-		List<Integer> elements = List.of(85, 10);
+		List<Integer> value = List.of(85, 10);
 		List<Integer> expected = List.of(10, 85);
 
-		Sorting<Integer> sorting = new SelectionSort<>(elements, new IntegerComparator());
-		List<Integer> sortedElements = sorting.sort();
+		Sorting<Integer> sorting = new SelectionSort<>(value, new IntegerComparator());
+		List<Integer> actual = sorting.sort();
 
-		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 }

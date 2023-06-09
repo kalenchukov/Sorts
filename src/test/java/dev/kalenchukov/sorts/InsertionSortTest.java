@@ -45,13 +45,13 @@ public class InsertionSortTest
 	@Test
 	public void sort()
 	{
-		List<Integer> elements = List.of(999, 0, -9, 94, -12, 47, 300, 86, 86, -1000);
+		List<Integer> value = List.of(999, 0, -9, 94, -12, 47, 300, 86, 86, -1000);
 		List<Integer> expected = List.of(-1000, -12, -9, 0, 47, 86, 86, 94, 300, 999);
 
-		Sorting<Integer> sorting = new InsertionSort<>(elements, new IntegerComparator());
-		List<Integer> sortedElements = sorting.sort();
+		Sorting<Integer> sorting = new InsertionSort<>(value, new IntegerComparator());
+		List<Integer> actual = sorting.sort();
 
-		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 
 	/**
@@ -60,13 +60,13 @@ public class InsertionSortTest
 	@Test
 	public void sortNotElement()
 	{
-		List<Integer> elements = Collections.emptyList();
+		List<Integer> value = Collections.emptyList();
 		List<Integer> expected = Collections.emptyList();
 
-		Sorting<Integer> sorting = new InsertionSort<>(elements, new IntegerComparator());
-		List<Integer> sortedElements = sorting.sort();
+		Sorting<Integer> sorting = new InsertionSort<>(value, new IntegerComparator());
+		List<Integer> actual = sorting.sort();
 
-		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 
 	/**
@@ -75,13 +75,13 @@ public class InsertionSortTest
 	@Test
 	public void sortOneElement()
 	{
-		List<Integer> elements = List.of(52);
+		List<Integer> value = List.of(52);
 		List<Integer> expected = List.of(52);
 
-		Sorting<Integer> sorting = new InsertionSort<>(elements, new IntegerComparator());
-		List<Integer> sortedElements = sorting.sort();
+		Sorting<Integer> sorting = new InsertionSort<>(value, new IntegerComparator());
+		List<Integer> actual = sorting.sort();
 
-		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 
 	/**
@@ -90,12 +90,12 @@ public class InsertionSortTest
 	@Test
 	public void sortTwoElement()
 	{
-		List<Integer> elements = List.of(52, 40);
+		List<Integer> value = List.of(52, 40);
 		List<Integer> expected = List.of(40, 52);
 
-		Sorting<Integer> sorting = new InsertionSort<>(elements, new IntegerComparator());
-		List<Integer> sortedElements = sorting.sort();
+		Sorting<Integer> sorting = new InsertionSort<>(value, new IntegerComparator());
+		List<Integer> actual = sorting.sort();
 
-		assertArrayEquals(expected.toArray(), sortedElements.toArray());
+		assertArrayEquals(expected.toArray(), actual.toArray());
 	}
 }

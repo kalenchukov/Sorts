@@ -38,7 +38,7 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class AbstractSortTest
 {
-	private final List<Integer> elements = List.of(
+	private static final List<Integer> VALUES = List.of(
 		78, 6, 9, 8, 1, 7, -5, 3, 4, 5, 0, 20, 77, -0, 69, -100
 	);
 
@@ -48,23 +48,23 @@ public class AbstractSortTest
 	@Test
 	public void getTimeStart()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
+		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
 		sorting.sort();
-		Long time = sorting.getTimeStart();
+		Long actual = sorting.getTimeStart();
 
-		assertNotNull(time);
+		assertNotNull(actual);
 	}
 
 	/**
-	 * Проверка метода {@link AbstractSort#getTimeStart()} без начала сортировки.
+	 * Проверка метода {@link AbstractSort#getTimeStart()} без выполнения сортировки.
 	 */
 	@Test
 	public void getTimeStartNull()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
-		Long time = sorting.getTimeStart();
+		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
+		Long actual = sorting.getTimeStart();
 
-		assertNull(time);
+		assertNull(actual);
 	}
 
 	/**
@@ -73,23 +73,23 @@ public class AbstractSortTest
 	@Test
 	public void getTimeEnd()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
+		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
 		sorting.sort();
-		Long time = sorting.getTimeEnd();
+		Long actual = sorting.getTimeEnd();
 
-		assertNotNull(time);
+		assertNotNull(actual);
 	}
 
 	/**
-	 * Проверка метода {@link AbstractSort#getTimeEnd()} без начала сортировки.
+	 * Проверка метода {@link AbstractSort#getTimeEnd()} без выполнения сортировки.
 	 */
 	@Test
 	public void getTimeEndNull()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
-		Long time = sorting.getTimeEnd();
+		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
+		Long actual = sorting.getTimeEnd();
 
-		assertNull(time);
+		assertNull(actual);
 	}
 
 	/**
@@ -98,22 +98,22 @@ public class AbstractSortTest
 	@Test
 	public void getTimeSpent()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
+		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
 		sorting.sort();
-		Long time = sorting.getTimeSpent();
+		Long actual = sorting.getTimeSpent();
 
-		assertNotNull(time);
+		assertNotNull(actual);
 	}
 
 	/**
-	 * Проверка метода {@link AbstractSort#getTimeStart()} без начала сортировки.
+	 * Проверка метода {@link AbstractSort#getTimeStart()} без выполнения сортировки.
 	 */
 	@Test
 	public void getTimeSpentNull()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(this.elements, new IntegerComparator());
-		Long time = sorting.getTimeSpent();
+		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
+		Long actual = sorting.getTimeSpent();
 
-		assertNull(time);
+		assertNull(actual);
 	}
 }
