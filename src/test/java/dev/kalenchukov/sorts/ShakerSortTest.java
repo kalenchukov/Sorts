@@ -46,12 +46,12 @@ public class ShakerSortTest
 	public void sort()
 	{
 		List<Integer> value = List.of(110, 5, 1, 97, 0, 7, 5, -0, 4, -4, -9);
-		List<Integer> expected = List.of(-9, -4, 0, 0, 1, 4, 5, 5, 7, 97, 110);
+		List<Integer> expectedList = List.of(-9, -4, 0, 0, 1, 4, 5, 5, 7, 97, 110);
 
-		Sorting<Integer> sorting = new ShakerSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new ShakerSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -61,12 +61,12 @@ public class ShakerSortTest
 	public void sortNotElement()
 	{
 		List<Integer> value = Collections.emptyList();
-		List<Integer> expected = Collections.emptyList();
+		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sorting = new ShakerSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new ShakerSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -76,12 +76,12 @@ public class ShakerSortTest
 	public void sortOneElement()
 	{
 		List<Integer> value = List.of(78);
-		List<Integer> expected = List.of(78);
+		List<Integer> expectedList = List.of(78);
 
-		Sorting<Integer> sorting = new ShakerSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new ShakerSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -91,11 +91,11 @@ public class ShakerSortTest
 	public void sortTwoElement()
 	{
 		List<Integer> value = List.of(40, 31);
-		List<Integer> expected = List.of(31, 40);
+		List<Integer> expectedList = List.of(31, 40);
 
-		Sorting<Integer> sorting = new ShakerSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new ShakerSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 }

@@ -47,12 +47,12 @@ public class BubbleSortTest
 	public void sort()
 	{
 		List<Integer> value = List.of(90, 7, 0, 8, 0, 6, -1);
-		List<Integer> expected = List.of(-1, 0, 0, 6, 7, 8, 90);
+		List<Integer> expectedList = List.of(-1, 0, 0, 6, 7, 8, 90);
 
-		Sorting<Integer> sorting = new BubbleSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -62,12 +62,12 @@ public class BubbleSortTest
 	public void sortNotElement()
 	{
 		List<Integer> value = Collections.emptyList();
-		List<Integer> expected = Collections.emptyList();
+		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sorting = new BubbleSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -77,12 +77,12 @@ public class BubbleSortTest
 	public void sortOneElement()
 	{
 		List<Integer> value = List.of(89);
-		List<Integer> expected = List.of(89);
+		List<Integer> expectedList = List.of(89);
 
-		Sorting<Integer> sorting = new BubbleSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -92,11 +92,11 @@ public class BubbleSortTest
 	public void sortTwoElement()
 	{
 		List<Integer> value = List.of(89, 71);
-		List<Integer> expected = List.of(71, 89);
+		List<Integer> expectedList = List.of(71, 89);
 
-		Sorting<Integer> sorting = new BubbleSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 }

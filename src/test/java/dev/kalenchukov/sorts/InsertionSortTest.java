@@ -46,12 +46,12 @@ public class InsertionSortTest
 	public void sort()
 	{
 		List<Integer> value = List.of(999, 0, -9, 94, -12, 47, 300, 86, 86, -1000);
-		List<Integer> expected = List.of(-1000, -12, -9, 0, 47, 86, 86, 94, 300, 999);
+		List<Integer> expectedList = List.of(-1000, -12, -9, 0, 47, 86, 86, 94, 300, 999);
 
-		Sorting<Integer> sorting = new InsertionSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new InsertionSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -61,12 +61,12 @@ public class InsertionSortTest
 	public void sortNotElement()
 	{
 		List<Integer> value = Collections.emptyList();
-		List<Integer> expected = Collections.emptyList();
+		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sorting = new InsertionSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new InsertionSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -76,12 +76,12 @@ public class InsertionSortTest
 	public void sortOneElement()
 	{
 		List<Integer> value = List.of(52);
-		List<Integer> expected = List.of(52);
+		List<Integer> expectedList = List.of(52);
 
-		Sorting<Integer> sorting = new InsertionSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new InsertionSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -91,11 +91,11 @@ public class InsertionSortTest
 	public void sortTwoElement()
 	{
 		List<Integer> value = List.of(52, 40);
-		List<Integer> expected = List.of(40, 52);
+		List<Integer> expectedList = List.of(40, 52);
 
-		Sorting<Integer> sorting = new InsertionSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new InsertionSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 }

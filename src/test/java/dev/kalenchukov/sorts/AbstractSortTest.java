@@ -38,21 +38,19 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 public class AbstractSortTest
 {
-	private static final List<Integer> VALUES = List.of(
-		78, 6, 9, 8, 1, 7, -5, 3, 4, 5, 0, 20, 77, -0, 69, -100
-	);
-
 	/**
 	 * Проверка метода {@link AbstractSort#getTimeStart()}.
 	 */
 	@Test
 	public void getTimeStart()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
-		sorting.sort();
-		Long actual = sorting.getTimeStart();
+		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		assertNotNull(actual);
+		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		sort.sort();
+		Long actualListTimeStart = sort.getTimeStart();
+
+		assertNotNull(actualListTimeStart);
 	}
 
 	/**
@@ -61,10 +59,12 @@ public class AbstractSortTest
 	@Test
 	public void getTimeStartNull()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
-		Long actual = sorting.getTimeStart();
+		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		assertNull(actual);
+		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		Long actualListTimeStart = sort.getTimeStart();
+
+		assertNull(actualListTimeStart);
 	}
 
 	/**
@@ -73,11 +73,13 @@ public class AbstractSortTest
 	@Test
 	public void getTimeEnd()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
-		sorting.sort();
-		Long actual = sorting.getTimeEnd();
+		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		assertNotNull(actual);
+		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		sort.sort();
+		Long actualListTimeEnd = sort.getTimeEnd();
+
+		assertNotNull(actualListTimeEnd);
 	}
 
 	/**
@@ -86,10 +88,12 @@ public class AbstractSortTest
 	@Test
 	public void getTimeEndNull()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
-		Long actual = sorting.getTimeEnd();
+		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		assertNull(actual);
+		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		Long actualListTimeEnd = sort.getTimeEnd();
+
+		assertNull(actualListTimeEnd);
 	}
 
 	/**
@@ -98,11 +102,13 @@ public class AbstractSortTest
 	@Test
 	public void getTimeSpent()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
-		sorting.sort();
-		Long actual = sorting.getTimeSpent();
+		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		assertNotNull(actual);
+		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		sort.sort();
+		Long actualListTimeSpent = sort.getTimeSpent();
+
+		assertNotNull(actualListTimeSpent);
 	}
 
 	/**
@@ -111,9 +117,11 @@ public class AbstractSortTest
 	@Test
 	public void getTimeSpentNull()
 	{
-		Sorting<Integer> sorting = new MergeSort<>(VALUES, new IntegerComparator());
-		Long actual = sorting.getTimeSpent();
+		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		assertNull(actual);
+		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		Long actualListTimeSpent = sort.getTimeSpent();
+
+		assertNull(actualListTimeSpent);
 	}
 }

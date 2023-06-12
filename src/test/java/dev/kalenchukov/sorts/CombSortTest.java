@@ -46,12 +46,12 @@ public class CombSortTest
 	public void sort()
 	{
 		List<Integer> value = List.of(11, 4, 8, -12, 6, 3, 9, -5, 1, 2, 13, 7, 10);
-		List<Integer> expected = List.of(-12, -5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13);
+		List<Integer> expectedList = List.of(-12, -5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13);
 
-		Sorting<Integer> sorting = new CombSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -61,12 +61,12 @@ public class CombSortTest
 	public void sortNotElement()
 	{
 		List<Integer> value = Collections.emptyList();
-		List<Integer> expected = Collections.emptyList();
+		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sorting = new CombSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -76,12 +76,12 @@ public class CombSortTest
 	public void sortOneElement()
 	{
 		List<Integer> value = List.of(89);
-		List<Integer> expected = List.of(89);
+		List<Integer> expectedList = List.of(89);
 
-		Sorting<Integer> sorting = new CombSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 
 	/**
@@ -91,11 +91,11 @@ public class CombSortTest
 	public void sortTwoElement()
 	{
 		List<Integer> value = List.of(89, 71);
-		List<Integer> expected = List.of(71, 89);
+		List<Integer> expectedList = List.of(71, 89);
 
-		Sorting<Integer> sorting = new CombSort<>(value, new IntegerComparator());
-		List<Integer> actual = sorting.sort();
+		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
+		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expected.toArray(), actual.toArray());
+		assertArrayEquals(expectedList.toArray(), actualList.toArray());
 	}
 }
