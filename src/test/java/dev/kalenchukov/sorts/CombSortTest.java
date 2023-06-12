@@ -30,7 +30,7 @@ import org.junit.jupiter.api.Test;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Класс проверки методов класса {@link CombSort}.
@@ -51,7 +51,7 @@ public class CombSortTest
 		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
 		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expectedList.toArray(), actualList.toArray());
+		assertThat(actualList).containsSequence(expectedList);
 	}
 
 	/**
@@ -66,7 +66,7 @@ public class CombSortTest
 		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
 		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expectedList.toArray(), actualList.toArray());
+		assertThat(actualList).containsSequence(expectedList);
 	}
 
 	/**
@@ -81,7 +81,7 @@ public class CombSortTest
 		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
 		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expectedList.toArray(), actualList.toArray());
+		assertThat(actualList).containsSequence(expectedList);
 	}
 
 	/**
@@ -96,6 +96,6 @@ public class CombSortTest
 		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
 		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expectedList.toArray(), actualList.toArray());
+		assertThat(actualList).containsSequence(expectedList);
 	}
 }

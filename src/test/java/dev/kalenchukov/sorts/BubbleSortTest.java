@@ -27,11 +27,10 @@ package dev.kalenchukov.sorts;
 import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Класс проверки методов класса {@link BubbleSort}.
@@ -52,7 +51,7 @@ public class BubbleSortTest
 		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
 		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expectedList.toArray(), actualList.toArray());
+		assertThat(actualList).containsSequence(expectedList);
 	}
 
 	/**
@@ -67,7 +66,7 @@ public class BubbleSortTest
 		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
 		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expectedList.toArray(), actualList.toArray());
+		assertThat(actualList).containsSequence(expectedList);
 	}
 
 	/**
@@ -82,7 +81,7 @@ public class BubbleSortTest
 		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
 		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expectedList.toArray(), actualList.toArray());
+		assertThat(actualList).containsSequence(expectedList);
 	}
 
 	/**
@@ -97,6 +96,6 @@ public class BubbleSortTest
 		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
 		List<Integer> actualList = sort.sort();
 
-		assertArrayEquals(expectedList.toArray(), actualList.toArray());
+		assertThat(actualList).containsSequence(expectedList);
 	}
 }
