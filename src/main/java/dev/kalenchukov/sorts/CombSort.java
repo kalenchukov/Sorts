@@ -43,7 +43,7 @@ public class CombSort<T> extends AbstractSort<T>
 	 * @param comparator компаратор.
 	 * @throws NullPointerException если в качестве коллекции объектов или компаратора передан {@code null}.
 	 */
-	protected CombSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
+	public CombSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
 	{
 		super(elements, comparator);
 	}
