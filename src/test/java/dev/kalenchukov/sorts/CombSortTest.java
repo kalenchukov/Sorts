@@ -24,7 +24,6 @@
 
 package dev.kalenchukov.sorts;
 
-import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
@@ -48,7 +47,7 @@ public class CombSortTest
 		List<Integer> value = List.of(11, 4, 8, -12, 6, 3, 9, -5, 1, 2, 13, 7, 10);
 		List<Integer> expectedList = List.of(-12, -5, 1, 2, 3, 4, 6, 7, 8, 9, 10, 11, 13);
 
-		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new CombSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -63,7 +62,7 @@ public class CombSortTest
 		List<Integer> value = Collections.emptyList();
 		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new CombSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -78,7 +77,7 @@ public class CombSortTest
 		List<Integer> value = List.of(89);
 		List<Integer> expectedList = List.of(89);
 
-		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new CombSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -93,7 +92,7 @@ public class CombSortTest
 		List<Integer> value = List.of(89, 71);
 		List<Integer> expectedList = List.of(71, 89);
 
-		Sorting<Integer> sort = new CombSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new CombSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);

@@ -24,7 +24,6 @@
 
 package dev.kalenchukov.sorts;
 
-import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
@@ -48,7 +47,7 @@ public class MergeSortTest
 		List<Integer> value = List.of(78, 6, 9, 8, 1, 7, -5, 3, 4, 5, 0, 20, 77, -0, 69, -100);
 		List<Integer> expectedList = List.of(-100, -5, 0, 0, 1, 3, 4, 5, 6, 7, 8, 9, 20, 69, 77, 78);
 
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -63,7 +62,7 @@ public class MergeSortTest
 		List<Integer> value = Collections.emptyList();
 		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -78,7 +77,7 @@ public class MergeSortTest
 		List<Integer> value = List.of(89);
 		List<Integer> expectedList = List.of(89);
 
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -93,7 +92,7 @@ public class MergeSortTest
 		List<Integer> value = List.of(89, 71);
 		List<Integer> expectedList = List.of(71, 89);
 
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);

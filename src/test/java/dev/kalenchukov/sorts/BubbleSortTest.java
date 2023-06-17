@@ -24,7 +24,6 @@
 
 package dev.kalenchukov.sorts;
 
-import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
@@ -48,7 +47,7 @@ public class BubbleSortTest
 		List<Integer> value = List.of(90, 7, 0, 8, 0, 6, -1);
 		List<Integer> expectedList = List.of(-1, 0, 0, 6, 7, 8, 90);
 
-		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new BubbleSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -63,7 +62,7 @@ public class BubbleSortTest
 		List<Integer> value = Collections.emptyList();
 		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new BubbleSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -78,7 +77,7 @@ public class BubbleSortTest
 		List<Integer> value = List.of(89);
 		List<Integer> expectedList = List.of(89);
 
-		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new BubbleSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -93,7 +92,7 @@ public class BubbleSortTest
 		List<Integer> value = List.of(89, 71);
 		List<Integer> expectedList = List.of(71, 89);
 
-		Sorting<Integer> sort = new BubbleSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new BubbleSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);

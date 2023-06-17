@@ -24,7 +24,6 @@
 
 package dev.kalenchukov.sorts;
 
-import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
@@ -55,7 +54,7 @@ public class AbstractSortTest
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 			sort.sort();
 			Long actualTimeStart = sort.getTimeStart();
 
@@ -70,7 +69,7 @@ public class AbstractSortTest
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 			Long actualTimeStart = sort.getTimeStart();
 
 			assertThat(actualTimeStart).isNull();
@@ -93,7 +92,7 @@ public class AbstractSortTest
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 			sort.sort();
 			Long actualTimeEnd = sort.getTimeEnd();
 
@@ -108,7 +107,7 @@ public class AbstractSortTest
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 			Long actualTimeEnd = sort.getTimeEnd();
 
 			assertThat(actualTimeEnd).isNull();
@@ -131,7 +130,7 @@ public class AbstractSortTest
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 			sort.sort();
 			Long actualTimeSpent = sort.getTimeSpent();
 
@@ -146,7 +145,7 @@ public class AbstractSortTest
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 			Long actualTimeSpent = sort.getTimeSpent();
 
 			assertThat(actualTimeSpent).isNull();

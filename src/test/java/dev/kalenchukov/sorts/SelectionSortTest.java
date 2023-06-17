@@ -24,7 +24,6 @@
 
 package dev.kalenchukov.sorts;
 
-import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
@@ -48,7 +47,7 @@ public class SelectionSortTest
 		List<Integer> value = List.of(889, 7, 1, 6, 1, -7, 56, 47, 0, -700);
 		List<Integer> expectedList = List.of(-700, -7, 0, 1, 1, 6, 7, 47, 56, 889);
 
-		Sorting<Integer> sort = new SelectionSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new SelectionSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -63,7 +62,7 @@ public class SelectionSortTest
 		List<Integer> value = Collections.emptyList();
 		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sort = new SelectionSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new SelectionSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -78,7 +77,7 @@ public class SelectionSortTest
 		List<Integer> value = List.of(85);
 		List<Integer> expectedList = List.of(85);
 
-		Sorting<Integer> sort = new SelectionSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new SelectionSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -93,7 +92,7 @@ public class SelectionSortTest
 		List<Integer> value = List.of(85, 10);
 		List<Integer> expectedList = List.of(10, 85);
 
-		Sorting<Integer> sort = new SelectionSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new SelectionSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);

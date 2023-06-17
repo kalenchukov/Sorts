@@ -24,7 +24,6 @@
 
 package dev.kalenchukov.sorts;
 
-import dev.kalenchukov.sorts.comparators.IntegerComparator;
 import org.junit.jupiter.api.Test;
 
 import java.util.Collections;
@@ -48,7 +47,7 @@ public class ShakerSortTest
 		List<Integer> value = List.of(110, 5, 1, 97, 0, 7, 5, -0, 4, -4, -9);
 		List<Integer> expectedList = List.of(-9, -4, 0, 0, 1, 4, 5, 5, 7, 97, 110);
 
-		Sorting<Integer> sort = new ShakerSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new ShakerSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -63,7 +62,7 @@ public class ShakerSortTest
 		List<Integer> value = Collections.emptyList();
 		List<Integer> expectedList = Collections.emptyList();
 
-		Sorting<Integer> sort = new ShakerSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new ShakerSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -78,7 +77,7 @@ public class ShakerSortTest
 		List<Integer> value = List.of(78);
 		List<Integer> expectedList = List.of(78);
 
-		Sorting<Integer> sort = new ShakerSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new ShakerSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
@@ -93,7 +92,7 @@ public class ShakerSortTest
 		List<Integer> value = List.of(40, 31);
 		List<Integer> expectedList = List.of(31, 40);
 
-		Sorting<Integer> sort = new ShakerSort<>(value, new IntegerComparator());
+		Sorting<Integer> sort = new ShakerSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
 		assertThat(actualList).containsSequence(expectedList);
