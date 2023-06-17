@@ -25,6 +25,7 @@
 package dev.kalenchukov.sorts;
 
 import dev.kalenchukov.sorts.comparators.IntegerComparator;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -39,89 +40,116 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class AbstractSortTest
 {
 	/**
-	 * Проверка метода {@link AbstractSort#getTimeStart()}.
+	 * Класс проверки метода {@link AbstractSort#getTimeStart()}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void getTimeStart()
+	@Nested
+	public class GetTimeStart
 	{
-		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
+		/**
+		 * Проверка метода {@link AbstractSort#getTimeStart()}.
+		 */
+		@Test
+		public void getTimeStart()
+		{
+			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
-		sort.sort();
-		Long actualTimeStart = sort.getTimeStart();
+			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			sort.sort();
+			Long actualTimeStart = sort.getTimeStart();
 
-		assertThat(actualTimeStart).isNotNull();
+			assertThat(actualTimeStart).isNotNull();
+		}
+
+		/**
+		 * Проверка метода {@link AbstractSort#getTimeStart()} без выполнения сортировки.
+		 */
+		@Test
+		public void getTimeStartNull()
+		{
+			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
+
+			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Long actualTimeStart = sort.getTimeStart();
+
+			assertThat(actualTimeStart).isNull();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link AbstractSort#getTimeStart()} без выполнения сортировки.
+	 * Класс проверки метода {@link AbstractSort#getTimeEnd()}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void getTimeStartNull()
+	@Nested
+	public class GetTimeEnd
 	{
-		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
+		/**
+		 * Проверка метода {@link AbstractSort#getTimeEnd()}.
+		 */
+		@Test
+		public void getTimeEnd()
+		{
+			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
-		Long actualTimeStart = sort.getTimeStart();
+			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			sort.sort();
+			Long actualTimeEnd = sort.getTimeEnd();
 
-		assertThat(actualTimeStart).isNull();
+			assertThat(actualTimeEnd).isNotNull();
+		}
+
+		/**
+		 * Проверка метода {@link AbstractSort#getTimeEnd()} без выполнения сортировки.
+		 */
+		@Test
+		public void getTimeEndNull()
+		{
+			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
+
+			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Long actualTimeEnd = sort.getTimeEnd();
+
+			assertThat(actualTimeEnd).isNull();
+		}
 	}
 
 	/**
-	 * Проверка метода {@link AbstractSort#getTimeEnd()}.
+	 * Класс проверки метода {@link AbstractSort#getTimeSpent()}.
+	 *
+	 * @author Алексей Каленчуков
 	 */
-	@Test
-	public void getTimeEnd()
+	@Nested
+	public class GetTimeSpent
 	{
-		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
+		/**
+		 * Проверка метода {@link AbstractSort#getTimeSpent()}.
+		 */
+		@Test
+		public void getTimeSpent()
+		{
+			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
-		sort.sort();
-		Long actualTimeEnd = sort.getTimeEnd();
+			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			sort.sort();
+			Long actualTimeSpent = sort.getTimeSpent();
 
-		assertThat(actualTimeEnd).isNotNull();
-	}
+			assertThat(actualTimeSpent).isNotNull();
+		}
 
-	/**
-	 * Проверка метода {@link AbstractSort#getTimeEnd()} без выполнения сортировки.
-	 */
-	@Test
-	public void getTimeEndNull()
-	{
-		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
+		/**
+		 * Проверка метода {@link AbstractSort#getTimeStart()} без выполнения сортировки.
+		 */
+		@Test
+		public void getTimeSpentNull()
+		{
+			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
-		Long actualTimeEnd = sort.getTimeEnd();
+			Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
+			Long actualTimeSpent = sort.getTimeSpent();
 
-		assertThat(actualTimeEnd).isNull();
-	}
-
-	/**
-	 * Проверка метода {@link AbstractSort#getTimeSpent()}.
-	 */
-	@Test
-	public void getTimeSpent()
-	{
-		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
-
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
-		sort.sort();
-		Long actualTimeSpent = sort.getTimeSpent();
-
-		assertThat(actualTimeSpent).isNotNull();
-	}
-
-	/**
-	 * Проверка метода {@link AbstractSort#getTimeStart()} без выполнения сортировки.
-	 */
-	@Test
-	public void getTimeSpentNull()
-	{
-		List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
-
-		Sorting<Integer> sort = new MergeSort<>(value, new IntegerComparator());
-		Long actualTimeSpent = sort.getTimeSpent();
-
-		assertThat(actualTimeSpent).isNull();
+			assertThat(actualTimeSpent).isNull();
+		}
 	}
 }
