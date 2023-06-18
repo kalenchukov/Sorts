@@ -25,7 +25,6 @@
 package dev.kalenchukov.sorts;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Range;
 
 import java.util.*;
 
@@ -90,9 +89,7 @@ public class SelectionSort<T> extends AbstractSort<T>
 	 * @throws IndexOutOfBoundsException если индекс элемента с которого начинается поиск,
 	 * меньше нуля или превышает количество элементов.
 	 */
-	@NotNull
-	private Integer getIndexMinElement(@NotNull final List<T> elements,
-									   @NotNull final Integer indexFrom)
+	private int getIndexMinElement(@NotNull final List<T> elements, final int indexFrom)
 	{
 		Objects.requireNonNull(elements);
 		Objects.checkIndex(indexFrom,  elements.size());
