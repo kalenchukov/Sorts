@@ -86,22 +86,16 @@ public class SelectionSort<T> extends AbstractSort<T>
 	 * @param elements коллекция элементов.
 	 * @param indexFrom минимальный индекс элемента с которого начинается поиск.
 	 * @return возвращает индекс минимального элемента.
-	 * @throws IllegalArgumentException если в коллекции нет элементов.
-	 * @throws IllegalArgumentException если индекс элемента с которого начинается поиск, меньше нуля или превышает количество элементов.
+	 * @throws NullPointerException если в качестве коллекции объектов передан {@code null}.
+	 * @throws IndexOutOfBoundsException если индекс элемента с которого начинается поиск,
+	 * меньше нуля или превышает количество элементов.
 	 */
 	@NotNull
 	private Integer getIndexMinElement(@NotNull final List<T> elements,
-									   @NotNull @Range(from = 0, to = Integer.MAX_VALUE) final Integer indexFrom)
+									   @NotNull final Integer indexFrom)
 	{
 		Objects.requireNonNull(elements);
-
-		if (elements.isEmpty()) {
-			throw new IllegalArgumentException();
-		}
-
-		if (indexFrom < 0 || indexFrom > elements.size()) {
-			throw new IllegalArgumentException();
-		}
+		Objects.checkIndex(indexFrom,  elements.size());
 
 		int indexMinElement = indexFrom;
 
