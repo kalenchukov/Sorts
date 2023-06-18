@@ -40,9 +40,9 @@ public class SelectionSort<T> extends AbstractSort<T>
 	/**
 	 * Конструктор для {@code SelectionSort}.
 	 *
-	 * @param elements коллекция сортируемых объектов.
+	 * @param elements коллекция сортируемых элементов.
 	 * @param comparator компаратор.
-	 * @throws NullPointerException если в качестве коллекции объектов или компаратора передан {@code null}.
+	 * @throws NullPointerException если в качестве коллекции элементов или компаратора передан {@code null}.
 	 */
 	public SelectionSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
 	{
@@ -54,7 +54,7 @@ public class SelectionSort<T> extends AbstractSort<T>
 	 *
 	 * @param elements {@inheritDoc}
 	 * @return {@inheritDoc}
-	 * @throws NullPointerException если в качестве коллекции объектов передан {@code null}.
+	 * @throws NullPointerException если в качестве коллекции элементов передан {@code null}.
 	 */
 	@NotNull
 	@Override
@@ -83,10 +83,10 @@ public class SelectionSort<T> extends AbstractSort<T>
 	/**
 	 * Возвращает индекс минимального элемента.
 	 *
-	 * @param elements коллекция элементов.
+	 * @param elements коллекция сортируемых элементов.
 	 * @param indexFrom минимальный индекс элемента с которого начинается поиск.
 	 * @return возвращает индекс минимального элемента.
-	 * @throws NullPointerException если в качестве коллекции объектов передан {@code null}.
+	 * @throws NullPointerException если в качестве коллекции элементов передан {@code null}.
 	 * @throws IndexOutOfBoundsException если индекс элемента с которого начинается поиск,
 	 * меньше нуля или превышает количество элементов.
 	 */

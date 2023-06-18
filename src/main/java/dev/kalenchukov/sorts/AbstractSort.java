@@ -42,7 +42,7 @@ import java.util.Objects;
 public abstract class AbstractSort<T> implements Sorting<T>
 {
 	/**
-	 * Коллекция сортируемых объектов.
+	 * Коллекция сортируемых элементов.
 	 */
 	@NotNull
 	private final List<T> elements;
@@ -68,9 +68,9 @@ public abstract class AbstractSort<T> implements Sorting<T>
 	/**
 	 * Конструктор для {@code AbstractSort}.
 	 *
-	 * @param elements коллекция сортируемых объектов.
+	 * @param elements коллекция сортируемых элементов.
 	 * @param comparator компаратор.
-	 * @throws NullPointerException если в качестве коллекции объектов или компаратора передан {@code null}.
+	 * @throws NullPointerException если в качестве коллекции элементов или компаратора передан {@code null}.
 	 */
 	protected AbstractSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
 	{
@@ -139,7 +139,7 @@ public abstract class AbstractSort<T> implements Sorting<T>
 	/**
 	 * Сортирует объекты коллекции.
 	 *
-	 * @param elements коллекция объектов для сортировки.
+	 * @param elements коллекция элементов для сортировки.
 	 * @return коллекцию с отсортированными объектами.
 	 */
 	@NotNull
