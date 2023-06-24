@@ -41,7 +41,8 @@ public class MergeSort<T> extends AbstractSort<T>
 	 *
 	 * @param elements коллекция сортируемых элементов.
 	 * @param comparator компаратор.
-	 * @throws NullPointerException если в качестве коллекции элементов или компаратора передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code comparator} передан {@code null}.
 	 */
 	public MergeSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
 	{
@@ -53,7 +54,7 @@ public class MergeSort<T> extends AbstractSort<T>
 	 *
 	 * @param elements {@inheritDoc}
 	 * @return {@inheritDoc}
-	 * @throws NullPointerException если в качестве коллекции элементов передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
 	 */
 	@NotNull
 	@Override
@@ -82,7 +83,8 @@ public class MergeSort<T> extends AbstractSort<T>
 	 * @param leftPart первая коллекция элементов.
 	 * @param rightPart вторая коллекция элементов.
 	 * @return коллекцию с отсортированными объектами.
-	 * @throws NullPointerException если в качестве первой или второй коллекции элементов передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code leftPart} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code rightPart} передан {@code null}.
 	 */
 	@NotNull
 	private List<T> mergeParts(@NotNull final List<T> leftPart, @NotNull final List<T> rightPart)

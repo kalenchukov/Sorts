@@ -41,7 +41,8 @@ public class BubbleSort<T> extends AbstractSort<T>
 	 *
 	 * @param elements коллекция сортируемых элементов.
 	 * @param comparator компаратор.
-	 * @throws NullPointerException если в качестве коллекции элементов или компаратора передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code comparator} передан {@code null}.
 	 */
 	public BubbleSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
 	{
@@ -53,7 +54,7 @@ public class BubbleSort<T> extends AbstractSort<T>
 	 *
 	 * @param elements {@inheritDoc}
 	 * @return {@inheritDoc}
-	 * @throws NullPointerException если в качестве коллекции элементов передан {@code null}.
+	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
 	 */
 	@NotNull
 	@Override
