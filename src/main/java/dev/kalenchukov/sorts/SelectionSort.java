@@ -31,10 +31,10 @@ import java.util.*;
 /**
  * Класс реализации сортировщика объектов с помощью алгоритма сортировки выбором.
  *
- * @param <T> тип сортируемых объектов.
+ * @param <E> тип сортируемых объектов.
  * @author Алексей Каленчуков
  */
-public class SelectionSort<T> extends AbstractSort<T>
+public class SelectionSort<E> extends AbstractSort<E>
 {
 	/**
 	 * Конструктор для {@code SelectionSort}.
@@ -44,7 +44,7 @@ public class SelectionSort<T> extends AbstractSort<T>
 	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
 	 * @throws NullPointerException если в качестве {@code comparator} передан {@code null}.
 	 */
-	public SelectionSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
+	public SelectionSort(@NotNull final List<E> elements, @NotNull final Comparator<E> comparator)
 	{
 		super(elements, comparator);
 	}
@@ -58,7 +58,7 @@ public class SelectionSort<T> extends AbstractSort<T>
 	 */
 	@NotNull
 	@Override
-	protected List<T> sortElements(@NotNull final List<T> elements)
+	protected List<E> sortElements(@NotNull final List<E> elements)
 	{
 		Objects.requireNonNull(elements);
 
@@ -66,7 +66,7 @@ public class SelectionSort<T> extends AbstractSort<T>
 			return elements;
 		}
 
-		List<T> sortedElements = new ArrayList<>(elements);
+		List<E> sortedElements = new ArrayList<>(elements);
 
 		for (int index = 0; index < sortedElements.size(); index++)
 		{
@@ -89,7 +89,7 @@ public class SelectionSort<T> extends AbstractSort<T>
 	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
 	 * @throws IndexOutOfBoundsException если {@code indexFrom} меньше нуля или превышает количество элементов.
 	 */
-	private int getIndexMinElement(@NotNull final List<T> elements, final int indexFrom)
+	private int getIndexMinElement(@NotNull final List<E> elements, final int indexFrom)
 	{
 		Objects.requireNonNull(elements);
 		Objects.checkIndex(indexFrom,  elements.size());

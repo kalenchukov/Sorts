@@ -31,10 +31,10 @@ import java.util.*;
 /**
  * Класс реализации сортировщика объектов с помощью алгоритма сортировки пузырьком.
  *
- * @param <T> тип сортируемых объектов.
+ * @param <E> тип сортируемых объектов.
  * @author Алексей Каленчуков
  */
-public class BubbleSort<T> extends AbstractSort<T>
+public class BubbleSort<E> extends AbstractSort<E>
 {
 	/**
 	 * Конструктор для {@code BubbleSort}.
@@ -44,7 +44,7 @@ public class BubbleSort<T> extends AbstractSort<T>
 	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
 	 * @throws NullPointerException если в качестве {@code comparator} передан {@code null}.
 	 */
-	public BubbleSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
+	public BubbleSort(@NotNull final List<E> elements, @NotNull final Comparator<E> comparator)
 	{
 		super(elements, comparator);
 	}
@@ -58,7 +58,7 @@ public class BubbleSort<T> extends AbstractSort<T>
 	 */
 	@NotNull
 	@Override
-	protected List<T> sortElements(@NotNull final List<T> elements)
+	protected List<E> sortElements(@NotNull final List<E> elements)
 	{
 		Objects.requireNonNull(elements);
 
@@ -66,7 +66,7 @@ public class BubbleSort<T> extends AbstractSort<T>
 			return elements;
 		}
 
-		List<T> sortedElements = new ArrayList<>(elements);
+		List<E> sortedElements = new ArrayList<>(elements);
 
 		for (int i = 0; i < (elements.size() - 1); i++)
 		{

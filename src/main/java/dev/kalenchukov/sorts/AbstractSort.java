@@ -36,22 +36,22 @@ import java.util.Objects;
 /**
  * Класс абстрактной реализации сортировщика объектов.
  *
- * @param <T> тип сортируемых объектов.
+ * @param <E> тип сортируемых объектов.
  * @author Алексей Каленчуков
  */
-public abstract class AbstractSort<T> implements Sorting<T>
+public abstract class AbstractSort<E> implements Sorting<E>
 {
 	/**
 	 * Коллекция сортируемых элементов.
 	 */
 	@NotNull
-	private final List<T> elements;
+	private final List<E> elements;
 
 	/**
 	 * Компаратор.
 	 */
 	@NotNull
-	private final Comparator<T> comparator;
+	private final Comparator<E> comparator;
 
 	/**
 	 * Время начала сортировки в миллисекундах.
@@ -73,7 +73,7 @@ public abstract class AbstractSort<T> implements Sorting<T>
 	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
 	 * @throws NullPointerException если в качестве {@code comparator} передан {@code null}.
 	 */
-	protected AbstractSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
+	protected AbstractSort(@NotNull final List<E> elements, @NotNull final Comparator<E> comparator)
 	{
 		Objects.requireNonNull(elements);
 		Objects.requireNonNull(comparator);
@@ -92,10 +92,10 @@ public abstract class AbstractSort<T> implements Sorting<T>
 	@NotNull
 	@Unmodifiable
 	@Override
-	public final List<T> sort()
+	public final List<E> sort()
 	{
 		this.setTimeStart();
-		List<T> sortedElements = this.sortElements(this.elements);
+		List<E> sortedElements = this.sortElements(this.elements);
 		this.setTimeEnd();
 
 		return Collections.unmodifiableList(sortedElements);
@@ -144,7 +144,7 @@ public abstract class AbstractSort<T> implements Sorting<T>
 	 * @return коллекцию с отсортированными объектами.
 	 */
 	@NotNull
-	protected abstract List<T> sortElements(@NotNull final List<T> elements);
+	protected abstract List<E> sortElements(@NotNull final List<E> elements);
 
 	/**
 	 * Возвращает компаратор.
@@ -152,7 +152,7 @@ public abstract class AbstractSort<T> implements Sorting<T>
 	 * @return компаратор.
 	 */
 	@NotNull
-	protected final Comparator<T> getComparator()
+	protected final Comparator<E> getComparator()
 	{
 		return this.comparator;
 	}

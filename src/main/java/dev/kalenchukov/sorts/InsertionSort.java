@@ -31,10 +31,10 @@ import java.util.*;
 /**
  * Класс реализации сортировщика объектов с помощью алгоритма сортировки вставками.
  *
- * @param <T> тип сортируемых объектов.
+ * @param <E> тип сортируемых объектов.
  * @author Алексей Каленчуков
  */
-public class InsertionSort<T> extends AbstractSort<T>
+public class InsertionSort<E> extends AbstractSort<E>
 {
 	/**
 	 * Конструктор для {@code InsertionSort}.
@@ -44,7 +44,7 @@ public class InsertionSort<T> extends AbstractSort<T>
 	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
 	 * @throws NullPointerException если в качестве {@code comparator} передан {@code null}.
 	 */
-	public InsertionSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
+	public InsertionSort(@NotNull final List<E> elements, @NotNull final Comparator<E> comparator)
 	{
 		super(elements, comparator);
 	}
@@ -58,7 +58,7 @@ public class InsertionSort<T> extends AbstractSort<T>
 	 */
 	@NotNull
 	@Override
-	protected List<T> sortElements(@NotNull final List<T> elements)
+	protected List<E> sortElements(@NotNull final List<E> elements)
 	{
 		Objects.requireNonNull(elements);
 
@@ -66,7 +66,7 @@ public class InsertionSort<T> extends AbstractSort<T>
 			return elements;
 		}
 
-		List<T> sortedElements = new ArrayList<>(elements);
+		List<E> sortedElements = new ArrayList<>(elements);
 
 		for(var i = 0; i < elements.size(); i++)
 		{

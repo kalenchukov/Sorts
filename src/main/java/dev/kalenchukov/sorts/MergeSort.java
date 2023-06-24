@@ -31,10 +31,10 @@ import java.util.*;
 /**
  * Класс реализации сортировщика объектов с помощью алгоритма сортировки слиянием.
  *
- * @param <T> тип сортируемых объектов.
+ * @param <E> тип сортируемых объектов.
  * @author Алексей Каленчуков
  */
-public class MergeSort<T> extends AbstractSort<T>
+public class MergeSort<E> extends AbstractSort<E>
 {
 	/**
 	 * Конструктор для {@code MergeSort}.
@@ -44,7 +44,7 @@ public class MergeSort<T> extends AbstractSort<T>
 	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
 	 * @throws NullPointerException если в качестве {@code comparator} передан {@code null}.
 	 */
-	public MergeSort(@NotNull final List<T> elements, @NotNull final Comparator<T> comparator)
+	public MergeSort(@NotNull final List<E> elements, @NotNull final Comparator<E> comparator)
 	{
 		super(elements, comparator);
 	}
@@ -58,7 +58,7 @@ public class MergeSort<T> extends AbstractSort<T>
 	 */
 	@NotNull
 	@Override
-	protected List<T> sortElements(@NotNull final List<T> elements)
+	protected List<E> sortElements(@NotNull final List<E> elements)
 	{
 		Objects.requireNonNull(elements);
 
@@ -68,8 +68,8 @@ public class MergeSort<T> extends AbstractSort<T>
 
 		final int middle = elements.size() / 2;
 
-		List<T> leftPart = new ArrayList<>(elements.subList(0, middle));
-		List<T> rightPart = new ArrayList<>(elements.subList(middle, elements.size()));
+		List<E> leftPart = new ArrayList<>(elements.subList(0, middle));
+		List<E> rightPart = new ArrayList<>(elements.subList(middle, elements.size()));
 
 		leftPart = this.sortElements(leftPart);
 		rightPart = this.sortElements(rightPart);
@@ -87,12 +87,12 @@ public class MergeSort<T> extends AbstractSort<T>
 	 * @throws NullPointerException если в качестве {@code rightPart} передан {@code null}.
 	 */
 	@NotNull
-	private List<T> mergeParts(@NotNull final List<T> leftPart, @NotNull final List<T> rightPart)
+	private List<E> mergeParts(@NotNull final List<E> leftPart, @NotNull final List<E> rightPart)
 	{
 		Objects.requireNonNull(leftPart);
 		Objects.requireNonNull(rightPart);
 
-		final List<T> sortedElements = new ArrayList<>();
+		final List<E> sortedElements = new ArrayList<>();
 		int indexLeft = 0;
 		int indexRight = 0;
 
