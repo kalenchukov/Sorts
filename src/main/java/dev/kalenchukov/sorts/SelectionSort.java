@@ -87,7 +87,7 @@ public class SelectionSort<E> extends AbstractSort<E>
 	 * @param indexFrom минимальный индекс элемента с которого начинается поиск.
 	 * @return возвращает индекс минимального элемента.
 	 * @throws NullPointerException если в качестве {@code elements} передан {@code null}.
-	 * @throws IndexOutOfBoundsException если {@code indexFrom} меньше нуля или превышает количество элементов.
+	 * @throws IndexOutOfBoundsException если {@code indexFrom} выходят за пределы количества элементов в {@code elements}.
 	 */
 	private int getIndexMinElement(@NotNull final List<E> elements, final int indexFrom)
 	{
