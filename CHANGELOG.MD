@@ -1,16 +1,10 @@
 # Журнал изменений
-## vX.X.X - XX.XX.XXXX
-### Добавлено
-* Добавлен модуль assertj-core версии 3.24.2.
-
+## v1.3.0 - 08.07.2023
 ### Изменено
 * Изменена версия Java на 17.
 
 ### Исправлено
 * Исправлен баг с конструктором CombSort.CombSort(List, Comparator).
-
-### Удалено
-*
 
 ## v1.2.0 - 07.04.2023
 ### Добавлено
@@ -19,7 +13,6 @@
 * Добавлен метод MergeSortTest.testSortNotElement().
 * Добавлен package-info.java.
 * Добавлен module-info.java.
-* Добавлена зависимость org.jetbrains.annotations в module-info.java.
 
 ## v1.1.0 - 03.04.2023
 ### Добавлено
