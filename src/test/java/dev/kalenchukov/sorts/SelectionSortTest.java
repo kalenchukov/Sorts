@@ -50,14 +50,14 @@ public class SelectionSortTest
 		Sorting<Integer> sort = new SelectionSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link SelectionSort#sort()} без элементов.
 	 */
 	@Test
-	public void sortNotElement()
+	public void sortWithValueEmpty()
 	{
 		List<Integer> value = Collections.emptyList();
 		List<Integer> expectedList = Collections.emptyList();
@@ -65,14 +65,14 @@ public class SelectionSortTest
 		Sorting<Integer> sort = new SelectionSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link SelectionSort#sort()} с одним элементом.
 	 */
 	@Test
-	public void sortOneElement()
+	public void sortWithOneValue()
 	{
 		List<Integer> value = List.of(85);
 		List<Integer> expectedList = List.of(85);
@@ -80,14 +80,14 @@ public class SelectionSortTest
 		Sorting<Integer> sort = new SelectionSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link SelectionSort#sort()} с двумя элементами.
 	 */
 	@Test
-	public void sortTwoElement()
+	public void sortWithTwoValue()
 	{
 		List<Integer> value = List.of(85, 10);
 		List<Integer> expectedList = List.of(10, 85);
@@ -95,6 +95,6 @@ public class SelectionSortTest
 		Sorting<Integer> sort = new SelectionSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 }

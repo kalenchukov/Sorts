@@ -21,11 +21,11 @@ import java.util.Comparator;
 
 public class IntegerComparator implements Comparator<Integer>
 {
-    @Override
-    public int compare(final Integer value1, final Integer value2) 
-    {
-        return value1.compareTo(value2);
-    }
+	@Override
+	public int compare(final Integer value1, final Integer value2)
+	{
+		return value1.compareTo(value2);
+	}
 }
 ```
 
@@ -36,17 +36,17 @@ import java.util.Comparator;
 
 public class StringComparator implements Comparator<String>
 {
-    @Override
-    public int compare(final String value1, final String value2) 
-    {
-        if (value1.length() < value2.length()) {
-            return -1;
-        } else if (value1.length() > value2.length())  {
-            return 1;
-        }
-        
-        return 0;
-    }
+	@Override
+	public int compare(final String value1, final String value2)
+	{
+		if (value1.length() < value2.length()) {
+			return -1;
+		} else if (value1.length() > value2.length())  {
+			return 1;
+		}
+
+		return 0;
+	}
 }
 ```
 

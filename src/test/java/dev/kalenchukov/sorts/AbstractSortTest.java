@@ -65,7 +65,7 @@ public class AbstractSortTest
 		 * Проверка метода {@link AbstractSort#getTimeStart()} без выполнения сортировки.
 		 */
 		@Test
-		public void getTimeStartNull()
+		public void getTimeStartWithNotExecute()
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
@@ -103,7 +103,7 @@ public class AbstractSortTest
 		 * Проверка метода {@link AbstractSort#getTimeEnd()} без выполнения сортировки.
 		 */
 		@Test
-		public void getTimeEndNull()
+		public void getTimeEndWithNotExecute()
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 
@@ -141,7 +141,7 @@ public class AbstractSortTest
 		 * Проверка метода {@link AbstractSort#getTimeStart()} без выполнения сортировки.
 		 */
 		@Test
-		public void getTimeSpentNull()
+		public void getTimeSpentWithNotExecute()
 		{
 			List<Integer> value = List.of(78, 6, 1, 7, -5, 3, 5, 0, 20, 77, -0, 69, -100);
 

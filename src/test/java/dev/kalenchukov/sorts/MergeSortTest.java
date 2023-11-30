@@ -50,14 +50,14 @@ public class MergeSortTest
 		Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link MergeSort#sort()} без элементов.
 	 */
 	@Test
-	public void sortNotElement()
+	public void sortWithValueEmpty()
 	{
 		List<Integer> value = Collections.emptyList();
 		List<Integer> expectedList = Collections.emptyList();
@@ -65,14 +65,14 @@ public class MergeSortTest
 		Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link MergeSort#sort()} с одним элементом.
 	 */
 	@Test
-	public void sortOneElement()
+	public void sortWithOneValue()
 	{
 		List<Integer> value = List.of(89);
 		List<Integer> expectedList = List.of(89);
@@ -80,14 +80,14 @@ public class MergeSortTest
 		Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link MergeSort#sort()} с двумя элементами.
 	 */
 	@Test
-	public void sortTwoElement()
+	public void sortWithTwoValue()
 	{
 		List<Integer> value = List.of(89, 71);
 		List<Integer> expectedList = List.of(71, 89);
@@ -95,6 +95,6 @@ public class MergeSortTest
 		Sorting<Integer> sort = new MergeSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 }

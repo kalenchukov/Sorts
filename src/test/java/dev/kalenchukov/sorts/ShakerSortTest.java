@@ -50,14 +50,14 @@ public class ShakerSortTest
 		Sorting<Integer> sort = new ShakerSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link ShakerSort#sort()} без элементов.
 	 */
 	@Test
-	public void sortNotElement()
+	public void sortWithValueEmpty()
 	{
 		List<Integer> value = Collections.emptyList();
 		List<Integer> expectedList = Collections.emptyList();
@@ -65,14 +65,14 @@ public class ShakerSortTest
 		Sorting<Integer> sort = new ShakerSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link ShakerSort#sort()} с одним элементом.
 	 */
 	@Test
-	public void sortOneElement()
+	public void sortWithOneValue()
 	{
 		List<Integer> value = List.of(78);
 		List<Integer> expectedList = List.of(78);
@@ -80,14 +80,14 @@ public class ShakerSortTest
 		Sorting<Integer> sort = new ShakerSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 
 	/**
 	 * Проверка метода {@link ShakerSort#sort()} с двумя элементами.
 	 */
 	@Test
-	public void sortTwoElement()
+	public void sortWithTwoValue()
 	{
 		List<Integer> value = List.of(40, 31);
 		List<Integer> expectedList = List.of(31, 40);
@@ -95,6 +95,6 @@ public class ShakerSortTest
 		Sorting<Integer> sort = new ShakerSort<>(value, Integer::compareTo);
 		List<Integer> actualList = sort.sort();
 
-		assertThat(actualList).containsSequence(expectedList);
+		assertThat(actualList).containsExactlyElementsOf(expectedList);
 	}
 }
